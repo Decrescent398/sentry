@@ -1,0 +1,8 @@
+\begindata
+KERNELS_TO_LOAD=(
+    'naif0012.tls',
+    'de440s.bsp',
+    'earth_000101_260619_260323.bpc',
+    'earth_latest_high_prec.bpc',
+)
+\begintext
