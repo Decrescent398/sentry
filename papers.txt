@@ -1,10 +1,13 @@
 Main
-Sentry 2          - https://iopscience.iop.org/article/10.3847/1538-3881/ac193f/pdf
+Sentry 2                      - https://iopscience.iop.org/article/10.3847/1538-3881/ac193f/pdf
+
+Astrodynamics
+Fundamentals of Astrodynamics - https://bmwordpress.s3.ap-south-1.amazonaws.com/acetvm/2024/04/Bate-Mueller-and-White-Fundamentals-of-Astrodynamics-1.pdf
 
 Minor Planet Center
-ADES              - https://github.com/IAU-ADES/ADES-Master/blob/master/ades_master.pdf
+ADES                          - https://github.com/IAU-ADES/ADES-Master/blob/master/ades_master.pdf
 
 Astrometric Uncertainity
-Old Systems       - https://apps.dtic.mil/sti/tr/pdf/ADA530911.pdf
-New Systems & CCD - https://arxiv.org/pdf/1703.03479
-Atlas 2           - https://iopscience.iop.org/article/10.3847/1538-4357/aae386/pdf
+Old Systems                   - https://apps.dtic.mil/sti/tr/pdf/ADA530911.pdf
+New Systems & CCD             - https://arxiv.org/pdf/1703.03479
+Atlas 2                       - https://iopscience.iop.org/article/10.3847/1538-4357/aae386/pdf
