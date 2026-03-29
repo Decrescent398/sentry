@@ -4,5 +4,9 @@ KERNELS_TO_LOAD=(
     'de440.bsp',
     'earth_000101_260619_260323.bpc',
     'earth_latest_high_prec.bpc',
+    'gm_de431.tpc',
+    'codes_300ast_20100725.tf',
+    'codes_300ast_20100725.bsp',
+    'pck00010.tpc',
 )
 \begintext
