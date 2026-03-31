@@ -98,26 +98,6 @@
 											"content": [
 												{
 													"type": "text",
-													"text": "script downloader for NAIF data"
-												}
-											]
-										}
-									]
-								},
-								{
-									"type": "listItem",
-									"attrs": {
-										"dir": "auto"
-									},
-									"content": [
-										{
-											"type": "paragraph",
-											"attrs": {
-												"dir": "auto"
-											},
-											"content": [
-												{
-													"type": "text",
 													"text": "hook up main loop to modal runtime"
 												}
 											]
@@ -224,7 +204,7 @@
 		},
 		{
 			"x": 43.328155517578125,
-			"y": 178.95833778381348,
+			"y": 195.15625190734863,
 			"z": 1,
 			"meta": {},
 			"id": "camera:page:page",
