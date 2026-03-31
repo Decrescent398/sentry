@@ -143,26 +143,6 @@
 											]
 										}
 									]
-								},
-								{
-									"type": "listItem",
-									"attrs": {
-										"dir": "auto"
-									},
-									"content": [
-										{
-											"type": "paragraph",
-											"attrs": {
-												"dir": "auto"
-											},
-											"content": [
-												{
-													"type": "text",
-													"text": "make unit conversion values global"
-												}
-											]
-										}
-									]
 								}
 							]
 						}
@@ -198,7 +178,7 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 668.3333129882812,
+				"w": 930,
 				"h": 805.8333129882812
 			},
 			"insets": [
@@ -243,8 +223,8 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": -94.59503173828125,
-			"y": 162.7604160308838,
+			"x": 43.328155517578125,
+			"y": 178.95833778381348,
 			"z": 1,
 			"meta": {},
 			"id": "camera:page:page",
