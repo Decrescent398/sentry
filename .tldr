@@ -59,7 +59,7 @@
 			"props": {
 				"color": "black",
 				"size": "m",
-				"w": 503.34375,
+				"w": 284.8958435058594,
 				"font": "draw",
 				"textAlign": "start",
 				"autoSize": true,
@@ -98,27 +98,7 @@
 											"content": [
 												{
 													"type": "text",
-													"text": "hook up main loop to modal runtime"
-												}
-											]
-										}
-									]
-								},
-								{
-									"type": "listItem",
-									"attrs": {
-										"dir": "auto"
-									},
-									"content": [
-										{
-											"type": "paragraph",
-											"attrs": {
-												"dir": "auto"
-											},
-											"content": [
-												{
-													"type": "text",
-													"text": "parallelize main loop"
+													"text": "cache propagation"
 												}
 											]
 										}
@@ -158,8 +138,8 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 930,
-				"h": 805.8333129882812
+				"w": 502,
+				"h": 1188
 			},
 			"insets": [
 				false,
@@ -174,7 +154,7 @@
 			"isChatting": false,
 			"highlightedUserIds": [],
 			"isFocused": true,
-			"devicePixelRatio": 1.2000000476837158,
+			"devicePixelRatio": 1.5,
 			"isCoarsePointer": false,
 			"isHoveringCanvas": true,
 			"openMenus": [],
@@ -193,7 +173,7 @@
 			"selectedShapeIds": [
 				"shape:NapmrLVcB8smImQepum__"
 			],
-			"hoveredShapeId": "shape:NapmrLVcB8smImQepum__",
+			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -203,9 +183,9 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": 43.328155517578125,
-			"y": 195.15625190734863,
-			"z": 1,
+			"x": -83.86627964284969,
+			"y": 607.8658183602726,
+			"z": 0.743030980319116,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"

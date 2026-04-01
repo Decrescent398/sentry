@@ -1,3 +1,4 @@
 kernels/*
 .json
 .vscode/
+__pycache__/
