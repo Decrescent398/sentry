@@ -1,0 +1,255 @@
+``` mermaid
+
+    flowchart LR
+
+        %% 1. Style Definitions
+        classDef var fill:#1a3e1a,color:#a8d8a8,stroke:#4a8a4a,stroke-width:2px
+        classDef quantity fill:#2d3748,color:#e2e8f0,stroke:#4a5568,stroke-width:1px
+        classDef userfunc fill:#2e1a3e,color:#d8a8d8stroke:#8a4a8a,stroke-width:2px
+        classDef builtinfunc fill:#3e1a1a,color:#d8a8a8,stroke:#8a4a4a,stroke-width:2px
+        classDef ghost fill:none,stroke:none,color:none
+
+        %% 2. Subgraph Definitions
+        subgraph N0["Minor Planet Center Requests"]
+            N0a[get-orb]
+            N0b[get-obs]
+        end
+
+        subgraph N1["Minor Planet Center Responses"]
+            N1a[orb]:::var
+            N1b["Eros's Orbital Data"]:::ghost
+        end
+
+        subgraph N6["NAIF Kernels"]
+            subgraph N6a["lsk/"]
+                N6aa[naif0012.tls]
+            end
+            subgraph N6b["spk/"]
+                N6ba[planets/de440.bsp]
+                N6bb['asteroids/codes_300ast_20100725.tf']
+            end
+            subgraph N6c["pck/"]
+                N6ca[earth_latest_high_prec.bpc]
+                N6cb[gm_de431.tpc]
+                N6cc[pck00010.tpc]
+            end
+        end
+
+        subgraph N14[n_body_ode]
+            direction LR
+            subgraph N14a["Required"]
+                N14aa[t]:::var
+                N14ab[state]:::var
+            end
+
+            N14b[r]:::var
+            N14c[v]:::var
+
+            N14d["acceleration calculation"]:::ghost
+            N14e[a]:::var
+
+            subgraph N14f[" "]
+                N14fa[ssbs]:::var
+                N14fb["gravitational parameter values of planets, major asteroids, sun and moon as tuple"]:::ghost
+                N14fc[name, mu]:::quantity
+            end
+
+            N14g["calculate gravitational pull due to sun"]:::ghost 
+
+            N14h["subtract gravitational pull from a"]:::ghost 
+
+            subgraph N14i["Returns"]
+                N14ia[coefficient values like]:::ghost
+                N14ib[vx, vy, vz, ax, ay, az]:::quantity
+            end
+        end
+
+        subgraph N15[propagate]
+            direction LR
+            subgraph N15a["Requirements"]
+                N15aa[x]:::var
+                N15ab[t0]:::var
+                N15ac[ti]:::var
+                N15ad[ode_solver]:::userfunc
+            end
+
+            N15b["DOP853 + 8 Step Runge-Kutta solver"]:::ghost
+            
+            subgraph N15c["Returns"]
+                N15ca[coefficient values like]:::ghost
+                N15cb[vx, vy, vz, ax, ay, az]:::quantity
+            end
+        end
+
+        subgraph N16[stn_to_ecef]
+            direction LR
+            subgraph N16a["Requirements"]
+                N16aa[stn]:::var
+                N16ab[properties]:::var
+            end
+
+            N16b["Reads stations CSV"]:::ghost
+
+            subgraph N16c["Returns"]
+                N16ca[dictionary with]:::ghost
+                N16cb[Long., cos, sin]:::quantity
+            end
+        end
+
+        subgraph N17["get_observer_pos_j2000"]
+            direction LR
+            subgraph N17a["Requirements"]
+                N17aa[stn]:::var
+                N17ab[t_obs]:::var
+                N17ac[properties]:::var
+                N17ad[stn_to_ecef]:::userfunc
+            end
+
+            N17b["Rotate to J2000"]:::ghost
+
+            subgraph N17c["Returns"]
+                N17ca[coefficient values like]:::ghost
+                N17cb[x, y, z]:::quantity
+            end
+        end
+
+        subgraph N18["Table values from relevant papers"]
+            N18a["Astrometric Uncertainity"]
+        end
+
+        subgraph N23["loadVFCC"]
+            direction LR
+            subgraph N23a["Requirements"]
+                N23aa[details]:::var
+                N23ab[dec_obs]:::var
+                N23ac[lookup]:::var
+            end
+
+            N23b["Get lowest sigma values"]:::ghost
+
+            subgraph N23c["Returns"]
+                N23ca[sigma_ra]:::var
+                N23cb[sigma_dec]:::var
+            end
+        end
+
+        subgraph N24["astrometric_error"]
+            direction LR
+            subgraph N24a["Requirements"]
+                N24aa[details]:::var
+                N24ab[dec_obs]:::var
+                N24ac[lookup]:::var
+            end
+
+            N24b["Get Root Mean Square values in radians"]:::ghost
+
+            subgraph N24c["Returns"]
+                N24ca[sigma_ra_rad]:::var
+                N24cb[sigma_dec_rad]:::var
+            end
+        end
+
+        %% 3. Node Definitions
+        N2[x]:::var
+        N3[coefficient values like]:::ghost
+        N4[x, y, z, vx, vy, vz]:::quantity
+        N5[t0_mjd]:::var
+        N7[sp.furnsh]:::builtinfunc
+        N8[obsdata]:::var
+        N9[obs_index]:::var
+        N10[Filter for observations after epoch]:::ghost
+        N11[t_epoch]:::var
+        N12[t0]:::var
+        N13[ecl_to_j2000]:::var
+        N19[VFCCLookupDefault]:::var
+        N20[VFCCAstcat]:::var
+        N21[VFCCStn]:::var
+        N22[VFCCLookup]:::var
+
+        %% 4. Style Definitions
+        N14:::userfunc
+        N14f:::ghost
+        N15:::userfunc
+        N16:::userfunc
+        N17:::userfunc
+        N23:::userfunc
+        N24:::userfunc
+        
+        %% 5. Graphing
+        N0a --mpc_orb--> N1a
+        N0b --Convert obstime to ET--> N8
+
+        N1a --coefficient_values--> N2
+        N1a --epoch--> N5
+
+        N2 --> N3 --> N4
+        N2 --Rotate to J2000--> N13
+
+        N4 --Convert Au/day to km/s and Au to km--> N2
+
+        N5 --Convert JDTDT to ET-->N11
+
+        N6 --check_download--> N6
+        N6 --planetaryMetaK.txt--> N7
+
+        N8 --> N0b
+        N8 --> N9
+
+        N9 --> N10
+        N9 --Fetch obstime--> N12
+
+        N10 --> N11
+
+        N11 --First epoch time greater than t_epoch--> N9
+
+        N12 --Rotate to J2000--> N13
+
+        N13 --> N2
+
+        N14aa --> N14g
+        N14ab --radii--> N14b
+        N14ab --velocities--> N14c
+        N14b --> N14d
+        N14c --> N14ia
+        N14d --> N14e
+        N14e --> N14h
+        N14e --> N14ia
+        N14fa --> N14fb
+        N14fa --> N14g
+        N14fb --> N14fc
+        N14fc --> N14fa
+        N14g --> N14e
+        N14h --> N14e
+        N14ia --> N14ib
+
+        N15a --> N15b
+        N15b --> N15ca
+        N15ca --> N15cb
+
+        N16a --> N16b
+        N16b --> N16ca
+        N16ca --> N16cb
+
+        N17a --> N17b
+        N17b --> N17ca
+        N17ca --> N17cb
+
+        N18a --> N19
+        N18a --> N20
+        N18a --> N21
+
+        N19 --> N22
+
+        N20 --> N22
+
+        N21 --> N22
+
+        N23aa --> N23b
+        N23ab --> N23ca
+        N23ac --> N23b
+        N23b --> N23ab
+        N23b --> N23cb
+
+        N24a --> N24b
+        N24b --> N24c
+```

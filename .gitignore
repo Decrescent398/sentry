@@ -1,4 +1,4 @@
-kernels/*
+data/kernels/*
 .json
 .vscode/
 __pycache__/
