@@ -3,3 +3,4 @@ requests
 scipy
 spiceypy
 nest_asyncio
+modal
