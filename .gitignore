@@ -3,3 +3,4 @@ data/kernels/*
 .vscode/
 __pycache__/
 .venv/
+docs/schemas

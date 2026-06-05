@@ -6,6 +6,7 @@ Fundamentals of Astrodynamics - https://bmwordpress.s3.ap-south-1.amazonaws.com/
 
 APIs
 Minor Planet Center ADES      - https://github.com/IAU-ADES/ADES-Master/blob/master/ades_master.pdf
+Minor Planet Center Orb       - https://github.com/Smithsonian/mpc-public/blob/main/mpc_orb/docs/mpc_orb.pdf
 NASA Horizons                 - https://ssd-api.jpl.nasa.gov/doc/horizons.html
 NAIF                          - https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/
 
