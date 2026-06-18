@@ -3,6 +3,8 @@ Sentry 2                      - https://iopscience.iop.org/article/10.3847/1538-
 
 Astrodynamics
 Fundamentals of Astrodynamics - https://bmwordpress.s3.ap-south-1.amazonaws.com/acetvm/2024/04/Bate-Mueller-and-White-Fundamentals-of-Astrodynamics-1.pdf
+Fundamentals of Astrodynamics - https://www.researchgate.net/profile/Karel-Wakker/publication/272507882_Fundamentals_of_Astrodynamics/links/54e7ad0e0cf27a6de10ac2a8/Fundamentals-of-Astrodynamics.pdf
+Celestial Mechanics           - https://www.astro.uvic.ca/~tatum/celmechs.html
 
 APIs
 Minor Planet Center ADES      - https://github.com/IAU-ADES/ADES-Master/blob/master/ades_master.pdf
