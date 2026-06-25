@@ -7,12 +7,12 @@ def get_residual_data():
     obs_data = mpc.fetch_observation_data()
 
     t_epoch, t_start, t_end = timesettings.set_initial_time_state(t0_mjd)
+    start_index = timesettings.nearest_mpc_time_index(t_start, t_end)
+    t_start = obs_data[start_index]['obstime'] #propagating from nearest t_start datapoint
+    t_end = obs_data[-1]['obstime'] # match the notebook fit horizon to the last available observation
 
     x = propagation_state.rotate_x(x, t_start, t_epoch)
     trajectory_solution = propagation.trajectory_solver(x, t_start, t_end)
-
-    start_index = timesettings.nearest_mpc_time_index(t_start, t_end)
-    t_start = obs_data[start_index+2]['obstime'] #propagating from nearest t_start datapoint
     
     e_baseline, W, observations = residuals.calculate_residuals(obs_data, start_index, trajectory_solution)
 

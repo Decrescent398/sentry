@@ -6,13 +6,13 @@ from datetime import timedelta
 from src.utils.units_and_conversions import arcsec_to_rad
 from main import main
 
-x, t_start, t_end, residual_states = main()
-
 print(np.sqrt(np.mean(residual_states**2)) / arcsec_to_rad)
 print(np.percentile(np.abs(residual_states) / arcsec_to_rad, [50, 90, 95, 99]))
 
 mean_residual = np.mean(np.abs(residual_states)) / arcsec_to_rad
 print(f"Mean Residual in arcseconds: {mean_residual}")
+
+print(x)
 
 command = "&COMMAND='433'"
 obj_data = "&OBJ_DATA='YES'"
