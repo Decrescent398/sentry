@@ -4,3 +4,5 @@ data/kernels/*
 __pycache__/
 .venv/
 docs/schemas
+r.bat
+t.bat

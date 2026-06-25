@@ -1,11 +1,11 @@
 \begindata
 KERNELS_TO_LOAD=(
-    '../data/kernels/naif0012.tls',
-    '../data/kernels/de440.bsp',
-    '../data/kernels/earth_latest_high_prec.bpc',
-    '../data/kernels/gm_de431.tpc',
-    '../data/kernels/codes_300ast_20100725.tf',
-    '../data/kernels/codes_300ast_20100725.bsp',
-    '../data/kernels/pck00010.tpc',
+    'data/kernels/naif0012.tls',
+    'data/kernels/de440.bsp',
+    'data/kernels/earth_latest_high_prec.bpc',
+    'data/kernels/gm_de431.tpc',
+    'data/kernels/codes_300ast_20100725.tf',
+    'data/kernels/codes_300ast_20100725.bsp',
+    'data/kernels/pck00010.tpc',
 )
 \begintext
