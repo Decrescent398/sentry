@@ -1,6 +1,19 @@
 import os
+from datetime import datetime
 
-from src.config import KERNEL_DIR
+from src.config import KERNEL_DIR, EXAMPLE_SPICEKERNEL, EARTH_LATEST_HIGH_PRESCISION
+
+def spice_setup():
+    os.remove(EXAMPLE_SPICEKERNEL)
+    
+    today = datetime.today().strftime("%D")
+    day = today.split('/')[1]
+    reset = day % 30
+    
+    if reset: 
+        os.remove(EARTH_LATEST_HIGH_PRESCISION)
+    return 
+        
 
 def load_spice_kernels():
     

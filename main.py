@@ -3,11 +3,12 @@ import numpy as np
 from scipy.integrate import solve_ivp
 
 from src.config import PLANTERY_METAKERNEL_TXT
-from src.queries.spice_kernels import load_spice_kernels
+from src.queries.spice_kernels import spice_setup, load_spice_kernels
 
 from src.orbit import orbital_mechanics 
 from src.orbit.methods import fitting, covariance, propagation
 
+# spice_setup()
 load_spice_kernels()
 sp.kclear()
 sp.furnsh(str(PLANTERY_METAKERNEL_TXT))

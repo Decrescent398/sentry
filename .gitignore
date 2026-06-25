@@ -1,4 +1,5 @@
 data/kernels/*
+!data/kernels/example.spicekernel
 .json
 .vscode/
 __pycache__/
