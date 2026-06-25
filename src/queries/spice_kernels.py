@@ -1,4 +1,5 @@
 import os
+import urllib
 from datetime import datetime
 
 from src.config import KERNEL_DIR, EXAMPLE_SPICEKERNEL, EARTH_LATEST_HIGH_PRESCISION

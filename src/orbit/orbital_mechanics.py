@@ -12,7 +12,7 @@ def get_residual_data():
     trajectory_solution = propagation.trajectory_solver(x, t_start, t_end)
 
     start_index = timesettings.nearest_mpc_time_index(t_start, t_end)
-    t_start = obs_data[start_index+2]
+    t_start = obs_data[start_index+2]['obstime'] #propagating from nearest t_start datapoint
     
     e_baseline, W, observations = residuals.calculate_residuals(obs_data, start_index, trajectory_solution)
 
