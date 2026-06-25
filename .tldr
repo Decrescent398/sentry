@@ -20,13 +20,13 @@
 			"com.tldraw.shape.group": 0,
 			"com.tldraw.shape.text": 4,
 			"com.tldraw.shape.bookmark": 2,
-			"com.tldraw.shape.draw": 4,
+			"com.tldraw.shape.draw": 5,
 			"com.tldraw.shape.geo": 11,
-			"com.tldraw.shape.note": 12,
+			"com.tldraw.shape.note": 13,
 			"com.tldraw.shape.line": 5,
 			"com.tldraw.shape.frame": 1,
 			"com.tldraw.shape.arrow": 8,
-			"com.tldraw.shape.highlight": 3,
+			"com.tldraw.shape.highlight": 4,
 			"com.tldraw.shape.embed": 4,
 			"com.tldraw.shape.image": 5,
 			"com.tldraw.shape.video": 4,
@@ -49,8 +49,8 @@
 			"typeName": "page"
 		},
 		{
-			"x": 405.01505466910976,
-			"y": -74.06053718359385,
+			"x": 81.49942966910976,
+			"y": -226.56053718359385,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -60,11 +60,11 @@
 			"props": {
 				"color": "black",
 				"size": "m",
-				"w": 16,
+				"w": 349.04241809391124,
 				"font": "draw",
 				"textAlign": "start",
-				"autoSize": true,
-				"scale": 1,
+				"autoSize": false,
+				"scale": 1.1540508355034722,
 				"richText": {
 					"type": "doc",
 					"attrs": {
@@ -72,10 +72,72 @@
 					},
 					"content": [
 						{
-							"type": "paragraph",
+							"type": "bulletList",
 							"attrs": {
 								"dir": "auto"
-							}
+							},
+							"content": [
+								{
+									"type": "listItem",
+									"attrs": {
+										"dir": "auto"
+									},
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "converge LT correction"
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"attrs": {
+										"dir": "auto"
+									},
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "converge threshold"
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "listItem",
+									"attrs": {
+										"dir": "auto"
+									},
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "central difference perturbation scheme"
+												}
+											]
+										}
+									]
+								}
+							]
 						}
 					]
 				}
@@ -83,6 +145,14 @@
 			"parentId": "page:page",
 			"index": "a1tgq9yV",
 			"typeName": "shape"
+		},
+		{
+			"name": "",
+			"color": "#F2555A",
+			"imageUrl": "",
+			"meta": {},
+			"id": "user:dU9Jng_cYu1X7yMvc8jAR",
+			"typeName": "user"
 		},
 		{
 			"x": 0,
@@ -109,7 +179,7 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 1369.1666259765625,
+				"w": 810,
 				"h": 805.8333129882812
 			},
 			"insets": [
@@ -154,20 +224,12 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": 137.12164882210118,
-			"y": 444.5813616159669,
+			"x": -8.015054669109759,
+			"y": 460.9745901468507,
 			"z": 1,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
-		},
-		{
-			"name": "",
-			"color": "#F2555A",
-			"imageUrl": "",
-			"meta": {},
-			"id": "user:dU9Jng_cYu1X7yMvc8jAR",
-			"typeName": "user"
 		}
 	]
 }
