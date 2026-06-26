@@ -17,7 +17,6 @@ def main():
 
     e_baseline, W, observations, x, t_start, t_end  = orbital_mechanics.get_residual_data()
 
-    max_iterations = 8
     tolerance_dx = 1e-3   
     tolerance_dQ = 1e-2   
 

@@ -84,12 +84,17 @@ def ObservationalError(obs, trajectory_solution):
     else:
         obs_pos = get_observer_pos_j2000(stn, t_obs, stn_properties)
         
-    lt = 0.0
+    lt_old = 0.0 
         
-    for _ in range(3):
+    while True:
         
         rho = r_asteroid - obs_pos
         lt = np.linalg.norm(rho)
+        
+        if abs(lt - lt_old) < 1e-9:
+            break
+        
+        lt_old = lt
         t_emit = t_obs - (lt / c_km_s)
         r_asteroid = trajectory_solution(t_emit)[:3]
         
