@@ -14,6 +14,6 @@ def calculate_residuals(obs_data, start_index, trajectory_solution):
     e_t = e_baseline.T # 1, 2*sum(obs_index:)
 
     W = np.diag(weights.flatten()) # 2*sum(obs_index:), 2*sum(obs_index:)
-    q = e_t @ W @ e_baseline #1, 1
+    q = (e_t @ W @ e_baseline).item() #1, 1
     
-    return (e_baseline, W, observations)
+    return (e_baseline, W, q)

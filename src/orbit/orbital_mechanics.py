@@ -14,6 +14,6 @@ def get_residual_data():
     x = propagation_state.rotate_x(x, t_start, t_epoch)
     trajectory_solution = propagation.trajectory_solver(x, t_start, t_end)
     
-    e_baseline, W, observations = residuals.calculate_residuals(obs_data, start_index, trajectory_solution)
+    e_baseline, W = residuals.calculate_residuals(obs_data, start_index, trajectory_solution)
 
-    return (e_baseline, W, observations, x, t_start, t_end)
+    return (e_baseline, W, obs_data, trajectory_solution, start_index)

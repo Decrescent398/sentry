@@ -25,4 +25,3 @@ def get_design_matrix(x_current, e_baseline, observation_list, t_start, t_end):
         B[:, j] = ((e_perturbed - e_baseline) / perturbations[j]).flatten()
     
     return B
-    
