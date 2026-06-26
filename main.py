@@ -26,7 +26,7 @@ def main():
 
     while True:
         
-        e_baseline, W, Q = prepare.calculate_residuals(observations, start_index, trajectory_solution)
+        e_baseline, W, Q = residuals.calculate_residuals(observations, start_index, trajectory_solution)
         
         B = covariance.get_design_matrix(x, e_baseline, observations, t_start, t_end)
         
@@ -40,7 +40,7 @@ def main():
             
             x_trial = x + dx
             trial_trajectory = propagation.trajectory_solver(x_trial, t_start, t_end)
-            _, _, Q_trial = prepare.calculate_residuals(observations, start_index, trial_trajectory)
+            _, _, Q_trial = residuals.calculate_residuals(observations, start_index, trial_trajectory)
             
             if Q_trial < Q:
                 x = x_trial
