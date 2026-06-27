@@ -24,10 +24,10 @@ def get_design_matrix(x_current, e_baseline, observation_list, t_start, t_end):
         x_minus[j] -= h
         
         trajectory_plus = propagation.trajectory_solver(x_plus, t_start, t_end)
-        e_plus, _, _ = residuals.calculate_residuals(observation_list, start_index, trajectory_plus)
+        e_plus, _, _, _ = residuals.calculate_residuals(observation_list, start_index, trajectory_plus)
         
         trajectory_minus = propagation.trajectory_solver(x_minus, t_start, t_end)
-        e_minus, _, _ = residuals.calculate_residuals(observation_list, start_index, trajectory_minus)
+        e_minus, _, _, _ = residuals.calculate_residuals(observation_list, start_index, trajectory_minus)
         
         B[:, j] = ((e_plus - e_minus) / (2*h)).flatten()
     

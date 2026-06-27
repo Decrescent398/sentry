@@ -9,14 +9,14 @@ from src.orbit import orbital_mechanics
 from src.orbit.methods import fitting, covariance, propagation
 from src.prepare import residuals
 
-# spice_setup()
+#spice_setup()
 load_spice_kernels()
 sp.kclear()
 sp.furnsh(str(PLANTERY_METAKERNEL_TXT))
 
 def main():
 
-    e_baseline, W, observations, trajectory_solution, start_index  = orbital_mechanics.get_residual_data()
+    e_baseline, W, observations, x, t_start, t_end, trajectory_solution, start_index  = orbital_mechanics.get_residual_data()
     
     tolerance_step = 1e-8
     tolerance_grad = 1e-8
@@ -26,7 +26,7 @@ def main():
 
     while True:
         
-        e_baseline, W, Q = residuals.calculate_residuals(observations, start_index, trajectory_solution)
+        e_baseline, W, Q, residual_states = residuals.calculate_residuals(observations, start_index, trajectory_solution)
         
         B = covariance.get_design_matrix(x, e_baseline, observations, t_start, t_end)
         
@@ -40,7 +40,7 @@ def main():
             
             x_trial = x + dx
             trial_trajectory = propagation.trajectory_solver(x_trial, t_start, t_end)
-            _, _, Q_trial = residuals.calculate_residuals(observations, start_index, trial_trajectory)
+            _, _, Q_trial, _ = residuals.calculate_residuals(observations, start_index, trial_trajectory)
             
             if Q_trial < Q:
                 x = x_trial
