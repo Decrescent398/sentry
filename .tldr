@@ -91,7 +91,7 @@
 											"content": [
 												{
 													"type": "text",
-													"text": "converge LT correction"
+													"text": "Replace the with a QR-based least-squares solver instead of solving (BTWB) "
 												}
 											]
 										}
@@ -111,27 +111,7 @@
 											"content": [
 												{
 													"type": "text",
-													"text": "converge threshold"
-												}
-											]
-										}
-									]
-								},
-								{
-									"type": "listItem",
-									"attrs": {
-										"dir": "auto"
-									},
-									"content": [
-										{
-											"type": "paragraph",
-											"attrs": {
-												"dir": "auto"
-											},
-											"content": [
-												{
-													"type": "text",
-													"text": "central difference perturbation scheme"
+													"text": "STM"
 												}
 											]
 										}
@@ -179,8 +159,8 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 810,
-				"h": 805.8333129882812
+				"w": 672,
+				"h": 1188.666748046875
 			},
 			"insets": [
 				false,
@@ -195,7 +175,7 @@
 			"isChatting": false,
 			"highlightedUserIds": [],
 			"isFocused": true,
-			"devicePixelRatio": 1.2000000476837158,
+			"devicePixelRatio": 1.5,
 			"isCoarsePointer": false,
 			"isHoveringCanvas": true,
 			"openMenus": [],
@@ -224,8 +204,8 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": -8.015054669109759,
-			"y": 460.9745901468507,
+			"x": 53.11869953553435,
+			"y": 747.0346577348091,
 			"z": 1,
 			"meta": {},
 			"id": "camera:page:page",

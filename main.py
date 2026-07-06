@@ -1,6 +1,5 @@
 import spiceypy as sp
 import numpy as np
-from scipy.integrate import solve_ivp
 
 from src.config import PLANTERY_METAKERNEL_TXT
 from src.queries.spice_kernels import spice_setup, load_spice_kernels

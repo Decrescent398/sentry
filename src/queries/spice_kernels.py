@@ -7,8 +7,7 @@ from src.config import KERNEL_DIR, EXAMPLE_SPICEKERNEL, EARTH_LATEST_HIGH_PRESCI
 def spice_setup():
     os.remove(EXAMPLE_SPICEKERNEL)
     
-    today = datetime.today().strftime("%D")
-    day = today.split('/')[1]
+    day = datetime.today().day
     reset = day % 30
     
     if reset: 
