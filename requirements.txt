@@ -5,3 +5,4 @@ spiceypy
 nest_asyncio
 modal
 pathlib
+pandas
